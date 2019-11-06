@@ -11,6 +11,7 @@
         margin: 20px;
         padding: 20px; 
         background: linear-gradient(0deg, #1668C4, white);
+        border-radius: 20px;
         
     }
     label{
@@ -43,8 +44,14 @@
 
 <center>
 
-        <form action="" id="formulario">
-                
+        <form action="post" id="formulario">
+            {% csrf_token %}
+            <div>
+                    <label for="{{ form.Apellido.id_for_label }}" {{ form.Nombre.label }}></label>
+                    <div>
+                        {{ form.Nombre }}
+                    </div>
+
                     <label for="nombre">Nombre</label>
                     <input type="text" id="nombre" placeholder="Escribe tu nombre">
 
@@ -58,6 +65,9 @@
                     <input type="tel" placeholder="Telefono Celular">
 
                     <input type="submit" value="Registrarme">
+            </div>
+                
+                    
  
         </form>
 </center>
